@@ -1,0 +1,21 @@
+name: Auto Create Cert PR from Dev
+
+on: 
+  push:
+    branches:
+    - blue_dev
+    - pink_dev
+
+jobs:
+  bluecertPR:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: "blue_dev"
+          pr_body: ":crown: *An automated PR*"
+          pr_assignee: "zachhorton"
+          pr_reviewer: "zachhorton"
+          pr_label: "auto-pr,Ready to merge"
