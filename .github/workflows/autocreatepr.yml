@@ -3,7 +3,8 @@ name: Auto Create Cert PR from Dev
 on: 
   push:
     branches:
-    - blue_dev
+    - "origin/blue_dev"
+    - "origin/pink_dev"
 
 jobs:
   bluecertPR:
@@ -15,7 +16,9 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          source_branch: "blue_dev"
+          source_branch: "origin/blue_dev"
+          destination_branch: "origin/blue_cert"
+          pr_title: "Pulling ${{ github.ref }} into blue_cert"
           pr_body: ":crown: *An automated PR*"
           pr_assignee: "zachhorton"
           pr_reviewer: "zachhorton"
