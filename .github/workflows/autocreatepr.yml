@@ -12,6 +12,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@master
+      - name: pull-request
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           source_branch: "origin/blue_dev"
