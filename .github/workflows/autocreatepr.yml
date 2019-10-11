@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: pull-request
+        uses: repo-sync/pull-request@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           source_branch: "origin/blue_dev"
@@ -21,4 +22,4 @@ jobs:
           pr_body: ":crown: *An automated PR*"
           pr_assignee: "zachhorton"
           pr_reviewer: "zachhorton"
-          pr_label: "auto-pr,Ready to merge"
+          pr_label: "auto-pr,ready"
