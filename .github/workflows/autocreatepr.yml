@@ -3,7 +3,7 @@ name: Auto Create Cert PR from Dev
 on: 
   push:
     branches:
-    - "origin/blue_dev"
+    - "blue_dev"
     - "origin/pink_dev"
 
 jobs:
