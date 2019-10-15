@@ -15,12 +15,11 @@ jobs:
       - uses: actions/checkout@master
       - name: pull-request
         uses: repo-sync/pull-request@v2
-        env:
-          TIMESTAMP: ${{ date +%s }}
+        
         with:
           source_branch: ${{ github.ref }}
           destination_branch: "blue_cert"
-          pr_title: "Pulling ${{ github.ref }} into blue_cert ${{ TIMESTAMP }}"
+          pr_title: "Pulling ${{ github.ref }} into blue_cert"
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pr_body: ":crown: *An automated PR*"
@@ -37,13 +36,11 @@ jobs:
       - uses: actions/checkout@master
       - name: pull-request
         uses: repo-sync/pull-request@v2
-        env:
-          TIMESTAMP: ${{ date +%s }}
         
         with:
           source_branch: "pink_dev"
           destination_branch: "pink_cert"
-          pr_title: "Pulling ${{ github.ref }} into pink_cert ${{ TIMESTAMP }}"
+          pr_title: "Pulling ${{ github.ref }} into pink_cert"
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pr_body: ":crown: *An automated PR*"
