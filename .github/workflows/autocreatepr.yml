@@ -8,42 +8,42 @@ on:
 
 jobs:
   makeBlueCertPR:
-    if: github.ref = "refs/heads/blue_dev"
+    if: github.ref == 'refs/heads/blue_dev'
     
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: pull-request
         uses: repo-sync/pull-request@v2
+        
         with:
-          
           source_branch: ${{ github.ref }}
           destination_branch: "blue_cert"
-          pr_title: "Pulling ${{ github.ref }} into blue_cert"
+          pr_title: "Pulling blue_dev into blue_cert"
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pr_body: ":crown: *An automated PR*"
+          pr_body: ":crown: *An automated PR* triggered by committing to blue_dev \n The contributors to this PR are pure :gem::gem: \n I'm sure this PR is the :bomb:"
           pr_assignee: "zachhorton"
           pr_reviewer: "zachhorton"
           pr_label: "BLUE,auto-pr"
 
           
   makePinkCertPR:
-    if: github.ref = "refs/heads/pink_dev"
+    if: github.ref == 'refs/heads/pink_dev'
     
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: pull-request
         uses: repo-sync/pull-request@v2
+        
         with:
-          
           source_branch: "pink_dev"
           destination_branch: "pink_cert"
-          pr_title: "Pulling ${{ github.ref }} into pink_cert"
+          pr_title: "Pulling pink_dev into pink_cert"
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pr_body: ":crown: *An automated PR*"
+          pr_body: ":crown: *An automated PR* triggered by committing to pink_dev!!"
           pr_assignee: "zachhorton"
           pr_reviewer: "zachhorton"
           pr_label: "PINK,auto-pr"
