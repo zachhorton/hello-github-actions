@@ -5,6 +5,8 @@ onComment:
 onApproved:
   remove:
     - Review Needed
+    - help wanted
+    - Needs Changes
   set:
     - Approved
 
