@@ -1,20 +1,15 @@
 onComment:
   set:
     - help wanted
-    - WIP
 
 onApproved:
   remove:
-    - help wanted
+    - Review Needed
   set:
-    - First review
-    - Ready to merge
+    - Approved
 
 onChangesRequested:
   remove:
-    - bug
-    - invalid
-    - duplicate
-    - help wanted
+    - Approved
   set:
-    - Ready to merge
+    - Needs Changes
