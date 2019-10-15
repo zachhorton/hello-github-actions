@@ -8,7 +8,7 @@ on:
 
 jobs:
   makeBlueCertPR:
-    if: github.ref == "refs/heads/blue_dev"
+    if: github.ref == 'refs/heads/blue_dev'
     
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +29,7 @@ jobs:
 
           
   makePinkCertPR:
-    if: github.ref == "refs/heads/pink_dev"
+    if: github.ref == 'refs/heads/pink_dev'
     
     runs-on: ubuntu-latest
     steps:
