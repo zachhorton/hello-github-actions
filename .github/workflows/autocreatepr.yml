@@ -43,7 +43,7 @@ jobs:
           pr_title: "Pulling pink_dev into pink_cert"
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pr_body: ":crown: *An automated PR* triggered by committing to pink_dev"
+          pr_body: ":crown: *An automated PR* triggered by committing to pink_dev!!"
           pr_assignee: "zachhorton"
           pr_reviewer: "zachhorton"
           pr_label: "PINK,auto-pr"
