@@ -19,10 +19,10 @@ jobs:
         with:
           source_branch: ${{ github.ref }}
           destination_branch: "blue_cert"
-          pr_title: "Pulling ${{ github.ref }} into blue_cert"
+          pr_title: "Pulling blue_dev into blue_cert"
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pr_body: ":crown: *An automated PR*"
+          pr_body: ":crown: *An automated PR* triggered by committing to blue_dev"
           pr_assignee: "zachhorton"
           pr_reviewer: "zachhorton"
           pr_label: "BLUE,auto-pr"
@@ -40,10 +40,10 @@ jobs:
         with:
           source_branch: "pink_dev"
           destination_branch: "pink_cert"
-          pr_title: "Pulling ${{ github.ref }} into pink_cert"
+          pr_title: "Pulling pink_dev into pink_cert"
 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          pr_body: ":crown: *An automated PR*"
+          pr_body: ":crown: *An automated PR* triggered by committing to pink_dev"
           pr_assignee: "zachhorton"
           pr_reviewer: "zachhorton"
           pr_label: "PINK,auto-pr"
