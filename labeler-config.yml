@@ -1,4 +1,6 @@
 onComment:
+  remove:
+    - help wanted
   set:
     - help wanted
 
